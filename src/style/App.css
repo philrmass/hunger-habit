@@ -1,4 +1,4 @@
-.weight {
+.weightMain {
   display: flex;
   flex-direction: column;
   color: #efefef;
@@ -12,4 +12,13 @@
 .weightValues {
   background: white;
   color: #202020;
+}
+
+.weight {
+  color: #080808;
+  margin-right: 8px;
+}
+
+.time {
+  color: #404040;
 }

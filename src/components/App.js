@@ -1,17 +1,26 @@
 import React from 'react';
 import '../style/App.css';
-import storage from '../utilities/storage';
+import { useLocalStorage } from '../utilities/storage';
 
 function App() {
+  const [weights, setWeights] = useLocalStorage('weights', []);
+
   const saveWeight = (e) => {
     if(e.keyCode === 13) {
-      console.log('SAVE', e.target.value);
+      setWeights([...weights, {
+        time: Date.now(),
+        weight: e.target.value,
+      }]);
     }
+  }
+
+  const deleteWeight = (time) => {
+    setWeights(weights.filter((value) => value.time !== time));
   }
 
   return (
     <div className="page">
-      <main className="weight">
+      <main className="weightMain">
         <section className="weightInput">
           <div>
             Add Current Weight
@@ -34,8 +43,19 @@ function App() {
             Values
           </header>
           <main>
-            <div>Value0</div>
-            <div>Value1</div>
+            { weights.map((value) => (
+              <div key={value.time}>
+                <span className="weight">
+                  {value.weight}
+                </span>
+                <span className="time">
+                  {(new Date(value.time)).toLocaleString()}
+                </span>
+                <button onClick={() => deleteWeight(value.time)}>
+                  Delete
+                </button>
+              </div>
+            ))}
           </main>
         </section>
       </main>
