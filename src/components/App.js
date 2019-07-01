@@ -1,26 +1,46 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../style/App.css';
+import storage from '../utilities/storage';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+function App() {
+  const saveWeight = (e) => {
+    if(e.keyCode === 13) {
+      console.log('SAVE', e.target.value);
+    }
   }
+
+  return (
+    <div className="page">
+      <main className="weight">
+        <section className="weightInput">
+          <div>
+            Add Current Weight
+          </div>
+          <div>
+            {(new Date()).toLocaleString()}
+          </div>
+          <div>
+            <input 
+              type="number"
+              min="0"
+              max="1000"
+              step="0.1"
+              onKeyUp={saveWeight}
+            />
+          </div>
+        </section>
+        <section className="weightValues">
+          <header>
+            Values
+          </header>
+          <main>
+            <div>Value0</div>
+            <div>Value1</div>
+          </main>
+        </section>
+      </main>
+    </div>
+  );
 }
 
 export default App;
