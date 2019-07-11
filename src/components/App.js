@@ -70,6 +70,7 @@ function App() {
     setWeights(weights.filter((value) => value.time !== time));
   }
 
+  const date = new Date();
   return (
     <div className="page">
       <main className="weightMain">
@@ -122,18 +123,19 @@ function App() {
                 {year.year}
                 <ul>
                   { year.monthAves.map((ave, index) => 
+                    ((ave != 0) &&
                     <li key={`${year}-${index}`} className='average'>
                     <div>
-                      {index}
+                      {(new Date(date.setMonth(index))).toLocaleString('en', { month: 'long' })}
                     </div>
                     <div>
                       {ave.toFixed(1)}
                     </div>
                     <div>
-                      {year.monthStdDevs[index].toFixed(1)}
+                      ({year.monthStdDevs[index].toFixed(1)})
                     </div>
                   </li>
-                  )}
+                  ))}
                 </ul>
               </li>
             ))}
