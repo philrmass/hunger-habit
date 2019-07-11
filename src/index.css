@@ -14,3 +14,8 @@ body {
   min-height: 100vh;
   background: #233445;
 }
+
+.average {
+  display: flex;
+  justify-content: space-around;
+}
