@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import '../style/App.css';
 import { useLocalStorage } from '../utilities/storage';
+import Averages from './Averages';
+import Graph from './Graph';
+import Weights from './Weights';
+import '../style/App.css';
+
 
 function averageMonths(weights) {
   const aves = Array.from(Array(12), () => 0);
@@ -57,92 +61,32 @@ function App() {
     setYears(averaged);
   }, [weights]);
 
-  function saveWeight(e) {
-    if(e.keyCode === 13) {
-      setWeights([...weights, {
-        time: Date.now(),
-        weight: e.target.value,
-      }]);
-    }
+  function saveWeight(value) {
+    setWeights([...weights, {
+      time: Date.now(),
+      weight: value,
+    }]);
   }
 
   function deleteWeight(time) {
     setWeights(weights.filter((value) => value.time !== time));
   }
 
-  const date = new Date();
   return (
-    <div className="page">
-      <main className="weightMain">
-        <section>
-          <div className="weightInput">
-            <div>
-              Add Current Weight
-            </div>
-            <div>
-              {(new Date()).toLocaleString()}
-            </div>
-            <div>
-              <input 
-                type="number"
-                min="0"
-                max="1000"
-                step="0.1"
-                onKeyUp={saveWeight}
-              />
-            </div>
-          </div>
-          <div className="weightValues">
-            <header>
-              Values
-            </header>
-            <main>
-              { weights.map((value) => (
-                <div key={value.time}>
-                  <span className="weight">
-                    {value.weight}
-                  </span>
-                  <span className="time">
-                    {(new Date(value.time)).toLocaleString()}
-                  </span>
-                  <button onClick={() => deleteWeight(value.time)}>
-                    Delete
-                  </button>
-                </div>
-              ))}
-            </main>
-          </div>
-        </section>
-        <section>
-          <div>
-            Averages
-          </div>
-          <ul>
-            { years.map((year) => (
-              <li key={year}>
-                {year.year}
-                <ul>
-                  { year.monthAves.map((ave, index) => 
-                    ((ave != 0) &&
-                    <li key={`${year}-${index}`} className='average'>
-                    <div>
-                      {(new Date(date.setMonth(index))).toLocaleString('en', { month: 'long' })}
-                    </div>
-                    <div>
-                      {ave.toFixed(1)}
-                    </div>
-                    <div>
-                      ({year.monthStdDevs[index].toFixed(1)})
-                    </div>
-                  </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </main>
-    </div>
+    <main className='page'>
+      <Weights
+        weights={weights}
+        saveWeight={saveWeight}
+        deleteWeight={deleteWeight}
+      />
+      <Averages
+        weights={weights}
+        years={years}
+      />
+      <Graph
+        weights={weights}
+      />
+    </main>
   );
 }
 

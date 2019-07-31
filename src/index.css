@@ -1,4 +1,5 @@
 :root {
+  --bg-color: #233445;
 }
 
 body {
@@ -8,14 +9,38 @@ body {
 }
 
 .page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  background: #233445;
+  background: var(--bg-color);
+}
+
+.top {
+  background: #ffe0c0;
+}
+
+.weights {
+  height: 60%;
+  padding: 10px;
+  border: 20px;
+  background: #ffc0c0;
+}
+
+.averages {
+  background: #c0ffc0;
+  color: black;
+}
+
+.averages ul {
+  margin: 0;
+  padding: 0;
 }
 
 .average {
   display: flex;
   justify-content: space-around;
+}
+
+.graph {
+  min-width: 300px;
+  min-height: 100px;
+  background: #c0c0ff;
 }
