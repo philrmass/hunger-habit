@@ -1,5 +1,5 @@
 {
-  "main.css": "/hunger-habit/static/css/main.2bbbb7e4.chunk.css",
+  "main.css": "/hunger-habit/static/css/main.195d25a1.chunk.css",
   "main.js": "/hunger-habit/static/js/main.c6a1d8f1.chunk.js",
   "main.js.map": "/hunger-habit/static/js/main.c6a1d8f1.chunk.js.map",
   "runtime~main.js": "/hunger-habit/static/js/runtime~main.6a89f152.js",
@@ -7,7 +7,7 @@
   "static/js/2.1b3a0643.chunk.js": "/hunger-habit/static/js/2.1b3a0643.chunk.js",
   "static/js/2.1b3a0643.chunk.js.map": "/hunger-habit/static/js/2.1b3a0643.chunk.js.map",
   "index.html": "/hunger-habit/index.html",
-  "precache-manifest.8a9a792ee9c095f0beb856391add3739.js": "/hunger-habit/precache-manifest.8a9a792ee9c095f0beb856391add3739.js",
+  "precache-manifest.530d5ff3ab65c233414980edebc94e1f.js": "/hunger-habit/precache-manifest.530d5ff3ab65c233414980edebc94e1f.js",
   "service-worker.js": "/hunger-habit/service-worker.js",
-  "static/css/main.2bbbb7e4.chunk.css.map": "/hunger-habit/static/css/main.2bbbb7e4.chunk.css.map"
+  "static/css/main.195d25a1.chunk.css.map": "/hunger-habit/static/css/main.195d25a1.chunk.css.map"
 }
