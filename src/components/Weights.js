@@ -1,72 +1,48 @@
-import React, { useState } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
-function Weights({ weights, saveWeight, deleteWeight }) {
-  const [value, setValue] = useState('');
+function Weights({ weights, deleteWeight }) {
+  function buildWeight(value) {
+    const date = new Date(value.time);
+    const dayOptions = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
+    const timeOptions = { hour: 'numeric', minute: '2-digit' };
+    const day = date.toLocaleString('en-us', dayOptions);
+    const time = date.toLocaleString('en-us', timeOptions);
 
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-
-  function handleKeyUp(e) {
-    if (e.keyCode === 13) {
-      saveWeight(value);
-      setValue('');
-    }
+    return (
+      <Fragment key={value.time}>
+        <div className='weight'>
+          {value.weight}
+        </div>
+        <div className='time'>
+          <div>
+            {day}
+          </div>
+          <div>
+            {time}
+          </div>
+        </div>
+        <div>
+          <button onClick={() => deleteWeight(value.time)}>
+            X
+          </button>
+        </div>
+      </Fragment>
+    );
   }
 
   return (
     <section className='weights'>
-      <section>
-        <div className='weightInput'>
-          <div>
-            Add Current Weight
-          </div>
-          <div>
-            {(new Date()).toLocaleString()}
-          </div>
-          <div>
-            <input
-              id='yo'
-              type='number'
-              min='0'
-              max='1000'
-              step='0.1'
-              value={value}
-              onChange={handleChange}
-              onKeyUp={handleKeyUp}
-            />
-          </div>
-        </div>
-        <div className='weightValues'>
-          <header>
-            Values
-          </header>
-          <main>
-            { weights.reverse().map((value) => (
-              <div key={value.time}>
-                <span className='weight'>
-                  {value.weight}
-                </span>
-                <span className='time'>
-                  {(new Date(value.time)).toLocaleString()}
-                </span>
-                <button onClick={() => deleteWeight(value.time)}>
-                  Delete
-                </button>
-              </div>
-            ))}
-          </main>
-        </div>
-      </section>
+      <div className='weightValues'>
+        { weights.slice(0).reverse().map((value) => buildWeight(value)) }
+      </div>
     </section>
   );
 }
 
 Weights.propTypes = {
   weights: PropTypes.arrayOf(PropTypes.object),
-  saveWeight: PropTypes.func,
   deleteWeight: PropTypes.func,
 };
 

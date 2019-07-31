@@ -1,6 +1,6 @@
 :root {
-  --weights-bg: #f0f0f0;
-  --weights-color: #383838;
+  --weight-bg: #ffffff;
+  --weight-color: #383838;
   --averages-bg: #233445;
   --averages-color: #d8d8d8;
   --graph-bg: #a0a0a0;
@@ -19,10 +19,21 @@ ul {
   padding: 0;
 }
 
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+}
+
 .page {
   display: grid;
-  grid-template-rows: 3fr 2fr;
-  min-height: 100vh;
+  grid-template-rows: 65% 35%;
+  height: 100vh;
 }
 
 .top {
@@ -30,30 +41,64 @@ ul {
   grid-template-columns: 2fr 1fr;
 }
 
+.weight {
+  background: var(--weight-bg);
+  color: var(--weight-color);
+}
+
 .weights {
-  background: var(--weights-bg);
-  color: var(--weights-color);
+  padding-top: 8px;
+  overflow-y: hidden;
 }
 
 .weightInput {
   padding: 4px;
-  background: red;
+  background: #d8d8d8;
+}
+
+.weightInput .label {
+  font-weight: bold;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
 }
 
 .weightValues {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
   color: #202020;
 }
 
+.weightValues > * {
+  padding-bottom: 8px;
+}
+
 .weightValues .weight {
-  color: #0808c8;
+  padding-left: 8px;
   margin-right: 8px;
+  color: #0808c8;
+  font-size: 1.6em;
 }
 
 .weightValues .time {
   color: #404040;
 }
 
+.weightValues button {
+  border: 1px solid #808080;
+  border-radius: 2px;
+  padding: 0 2px;
+  background: #d0d0d0;
+  color: #606060;
+  font-size: 0.8em;
+}
+
 .averages {
+  padding: 8px;
   background: var(--averages-bg);
   color: var(--averages-color);
 }

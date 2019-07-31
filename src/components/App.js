@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useLocalStorage } from '../utilities/storage';
 import Averages from './Averages';
 import Graph from './Graph';
-import Weights from './Weights';
+import Weight from './Weight';
 
 
 function averageMonths(weights) {
   const aves = Array.from(Array(12), () => 0);
   const counts = Array.from(Array(12), () => 0);
   weights.forEach((weight) => {
-    aves[weight.month] += parseInt(weight.weight);
+    aves[weight.month] += parseInt(weight.weight, 10);
     counts[weight.month]++;
   });
   return aves.map((ave, index) => counts[index] === 0 ? 0 : (ave / counts[index]));
@@ -19,7 +19,7 @@ function stdDevMonths(weights, averages) {
   const sums = Array.from(Array(12), () => 0);
   const counts = Array.from(Array(12), () => 0);
   weights.forEach((weight) => {
-    const diff = parseInt(weight.weight) - averages[weight.month];
+    const diff = parseInt(weight.weight, 10) - averages[weight.month];
     sums[weight.month] += (diff * diff);
     counts[weight.month]++;
   });
@@ -55,7 +55,7 @@ function App() {
         year: year.year,
         monthAves,
         monthStdDevs: stdDevMonths(year.weights, monthAves),
-      }
+      };
     });
     setYears(averaged);
   }, [weights]);
@@ -74,7 +74,7 @@ function App() {
   return (
     <main className='page'>
       <div className='top'>
-        <Weights
+        <Weight
           weights={weights}
           saveWeight={saveWeight}
           deleteWeight={deleteWeight}
