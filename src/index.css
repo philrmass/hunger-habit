@@ -1,5 +1,10 @@
 :root {
-  --bg-color: #233445;
+  --weights-bg: #f0f0f0;
+  --weights-color: #383838;
+  --averages-bg: #233445;
+  --averages-color: #d8d8d8;
+  --graph-bg: #a0a0a0;
+  --graph-color: #202080;
 }
 
 body {
@@ -8,30 +13,49 @@ body {
   font-family: "Helvetica", sans-serif;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .page {
+  display: grid;
+  grid-template-rows: 3fr 2fr;
   min-height: 100vh;
-  background: var(--bg-color);
 }
 
 .top {
-  background: #ffe0c0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .weights {
-  height: 60%;
-  padding: 10px;
-  border: 20px;
-  background: #ffc0c0;
+  background: var(--weights-bg);
+  color: var(--weights-color);
+}
+
+.weightInput {
+  padding: 4px;
+  background: red;
+}
+
+.weightValues {
+  color: #202020;
+}
+
+.weightValues .weight {
+  color: #0808c8;
+  margin-right: 8px;
+}
+
+.weightValues .time {
+  color: #404040;
 }
 
 .averages {
-  background: #c0ffc0;
-  color: black;
-}
-
-.averages ul {
-  margin: 0;
-  padding: 0;
+  background: var(--averages-bg);
+  color: var(--averages-color);
 }
 
 .average {
@@ -42,5 +66,6 @@ body {
 .graph {
   min-width: 300px;
   min-height: 100px;
-  background: #c0c0ff;
+  background: var(--graph-bg);
+  color: var(--graph-color);
 }

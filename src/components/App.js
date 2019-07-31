@@ -3,7 +3,6 @@ import { useLocalStorage } from '../utilities/storage';
 import Averages from './Averages';
 import Graph from './Graph';
 import Weights from './Weights';
-import '../style/App.css';
 
 
 function averageMonths(weights) {
@@ -74,15 +73,17 @@ function App() {
 
   return (
     <main className='page'>
-      <Weights
-        weights={weights}
-        saveWeight={saveWeight}
-        deleteWeight={deleteWeight}
-      />
-      <Averages
-        weights={weights}
-        years={years}
-      />
+      <div className='top'>
+        <Weights
+          weights={weights}
+          saveWeight={saveWeight}
+          deleteWeight={deleteWeight}
+        />
+        <Averages
+          weights={weights}
+          years={years}
+        />
+      </div>
       <Graph
         weights={weights}
       />

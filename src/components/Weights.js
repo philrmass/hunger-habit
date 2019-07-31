@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function Weights({ weights, saveWeight, deleteWeight }) {
-  const [current, setCurrent] = useState(undefined);
 
-  function enterWeight(e) {
-    if(e.keyCode === 13) {
-      console.log('enter', e.target.value);
-      saveWeight(e.target.value);
+function Weights({ weights, saveWeight, deleteWeight }) {
+  const [value, setValue] = useState('');
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  function handleKeyUp(e) {
+    if (e.keyCode === 13) {
+      saveWeight(value);
+      setValue('');
     }
   }
 
   return (
     <section className='weights'>
       <section>
-        <div className="weightInput">
+        <div className='weightInput'>
           <div>
             Add Current Weight
           </div>
@@ -22,26 +27,29 @@ function Weights({ weights, saveWeight, deleteWeight }) {
             {(new Date()).toLocaleString()}
           </div>
           <div>
-            <input 
-              type="number"
-              min="0"
-              max="1000"
-              step="0.1"
-              onKeyUp={enterWeight}
+            <input
+              id='yo'
+              type='number'
+              min='0'
+              max='1000'
+              step='0.1'
+              value={value}
+              onChange={handleChange}
+              onKeyUp={handleKeyUp}
             />
           </div>
         </div>
-        <div className="weightValues">
+        <div className='weightValues'>
           <header>
             Values
           </header>
           <main>
-            { weights.map((value) => (
+            { weights.reverse().map((value) => (
               <div key={value.time}>
-                <span className="weight">
+                <span className='weight'>
                   {value.weight}
                 </span>
-                <span className="time">
+                <span className='time'>
                   {(new Date(value.time)).toLocaleString()}
                 </span>
                 <button onClick={() => deleteWeight(value.time)}>
