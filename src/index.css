@@ -12,6 +12,7 @@
 }
 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Helvetica", sans-serif;
@@ -38,20 +39,28 @@ button {
   height: 100vh;
 }
 
-.weight {
-  height: 50%;
+.weightInputSection {
+  height: 4rem;
   background: var(--weight-bg);
   color: var(--weight-color);
-  overflow-y: scroll;
 }
 
-.weights {
+.weightsSection {
+  height: calc(50% - 4rem);
   padding: 8px 0;
 }
 
-.weightValues {
+.averagesSection {
+  height: 15%;
+  background: #c8c8ff;
 }
 
+.graphSection {
+  height: 35%;
+  background: #f8f480;
+}
+
+/*
 .weightValues > * {
   padding-bottom: 8px;
 }
@@ -76,6 +85,11 @@ button {
   font-size: 0.8em;
 }
 
+.graph {
+  height: 35%;
+  background: var(--graph-bg);
+}
+
 .averages {
   height: 15%;
   padding: 8px;
@@ -84,12 +98,8 @@ button {
   font-size: 0.9em;
 }
 
+*/
 .average {
   display: flex;
   justify-content: space-around;
-}
-
-.graph {
-  height: 35%;
-  background: var(--graph-bg);
 }

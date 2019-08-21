@@ -1,6 +1,11 @@
 .main {
-  height: 40%;
-  background: yellow;
+  /*
   overflow-x: scroll;
   overflow-y: hidden;
+  */
+}
+
+.thing {
+  height: 10%;
+  background: #ffc080;
 }

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../styles/Weight.module.css';
-import Weights from './Weights';
+import styles from '../styles/WeightInput.module.css';
 
 
-function Weight({ weights, saveWeight, deleteWeight }) {
+function WeightInput({ saveWeight }) {
   const [value, setValue] = useState('');
   const date = new Date();
   const dayOptions = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
@@ -24,7 +23,7 @@ function Weight({ weights, saveWeight, deleteWeight }) {
   }
 
   return (
-    <section className='weight'>
+    <section className='weightInputSection'>
       <div className={styles.inputBox}>
         <div className={styles.label}>
           Add Current Weight
@@ -49,20 +48,12 @@ function Weight({ weights, saveWeight, deleteWeight }) {
           <div></div>
         </div>
       </div>
-      <div className={styles.weights}>
-        <Weights
-          weights={weights}
-          deleteWeight={deleteWeight}
-        />
-      </div>
     </section>
   );
 }
 
-Weight.propTypes = {
-  weights: PropTypes.arrayOf(PropTypes.object),
+WeightInput.propTypes = {
   saveWeight: PropTypes.func,
-  deleteWeight: PropTypes.func,
 };
 
-export default Weight;
+export default WeightInput;

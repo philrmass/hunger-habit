@@ -1,6 +1,12 @@
-.main {
-  height: 20%;
-  background: skyblue;
-  overflow-x: hidden;
+.box {
+  /*
   overflow-y: scroll;
+  */
+}
+
+.title {
+  color: #800000;
+}
+
+.values {
 }

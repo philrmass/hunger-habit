@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useLocalStorage } from '../utilities/storage';
 import Averages from './Averages';
 import Graph from './Graph';
-import Weight from './Weight';
+import WeightInput from './WeightInput';
+import Weights from './Weights';
 
 
 function averageMonths(weights) {
@@ -73,9 +74,11 @@ function App() {
 
   return (
     <main className='page'>
-      <Weight
-        weights={weights}
+      <WeightInput
         saveWeight={saveWeight}
+      />
+      <Weights
+        weights={weights}
         deleteWeight={deleteWeight}
       />
       <Averages

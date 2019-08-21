@@ -34,9 +34,11 @@ function Weights({ weights, deleteWeight }) {
   }
 
   return (
-    <section className={styles.box}>
-      <div className={styles.values}>
-        { weights.slice(0).reverse().map((value) => buildWeight(value)) }
+    <section className='weightsSection'>
+      <div className={styles.box}>
+        <div className={styles.values}>
+          { weights.slice(0).reverse().map((value) => buildWeight(value)) }
+        </div>
       </div>
     </section>
   );

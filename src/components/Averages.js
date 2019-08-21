@@ -7,8 +7,8 @@ function Averages({ weights, years }) {
   const date = new Date();
 
   return (
-    <section className={styles.main}>
-      <div>
+    <section className='averagesSection'>
+      <div className={styles.title}>
         Averages
       </div>
       <ul>

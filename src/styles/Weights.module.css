@@ -1,6 +1,6 @@
 .box {
-  height: 80%;
-  border: 1px solid red;
+  height: 100%;
+  border: 1px solid #f08080;
   padding: 8px;
   /*
   background: #80ffdf;
@@ -14,5 +14,5 @@
   grid-template-columns: auto auto auto;
   align-items: center;
   color: #202020;
-  border: 1px solid green;
+  background: #e0e0e0;
 }
