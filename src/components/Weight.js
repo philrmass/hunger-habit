@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Weights from './Weights';
 import styles from '../styles/Weight.module.css';
+import Weights from './Weights';
 
 
 function Weight({ weights, saveWeight, deleteWeight }) {

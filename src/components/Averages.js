@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../styles/Averages.module.css';
 
 
 function Averages({ weights, years }) {
   const date = new Date();
 
   return (
-    <section className='averages'>
+    <section className={styles.main}>
       <div>
         Averages
       </div>

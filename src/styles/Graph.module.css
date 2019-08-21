@@ -1,0 +1,6 @@
+.main {
+  height: 40%;
+  background: yellow;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}

@@ -1,0 +1,6 @@
+.main {
+  height: 20%;
+  background: skyblue;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

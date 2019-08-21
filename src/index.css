@@ -7,6 +7,10 @@
   --graph-color: #202080;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -38,6 +42,7 @@ button {
   height: 50%;
   background: var(--weight-bg);
   color: var(--weight-color);
+  overflow-y: scroll;
 }
 
 .weights {
@@ -45,10 +50,6 @@ button {
 }
 
 .weightValues {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: center;
-  color: #202020;
 }
 
 .weightValues > * {
@@ -80,6 +81,7 @@ button {
   padding: 8px;
   background: var(--averages-bg);
   color: var(--averages-color);
+  font-size: 0.9em;
 }
 
 .average {

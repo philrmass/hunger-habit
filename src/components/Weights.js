@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import styles from '../styles/Weights.module.css';
 
 
 function Weights({ weights, deleteWeight }) {
@@ -33,8 +34,8 @@ function Weights({ weights, deleteWeight }) {
   }
 
   return (
-    <section className='weights'>
-      <div className='weightValues'>
+    <section className={styles.box}>
+      <div className={styles.values}>
         { weights.slice(0).reverse().map((value) => buildWeight(value)) }
       </div>
     </section>

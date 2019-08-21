@@ -1,0 +1,18 @@
+.box {
+  height: 80%;
+  border: 1px solid red;
+  padding: 8px;
+  /*
+  background: #80ffdf;
+  */
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  color: #202020;
+  border: 1px solid green;
+}

@@ -75,9 +75,9 @@ function App() {
     <main className='page'>
       <Weight
         weights={weights}
-         saveWeight={saveWeight}
-         deleteWeight={deleteWeight}
-       />
+        saveWeight={saveWeight}
+        deleteWeight={deleteWeight}
+      />
       <Averages
         weights={weights}
         years={years}
