@@ -1,0 +1,20 @@
+.inputBox {
+  height: 4em;
+  padding: 4px;
+  background: #d8d8d8;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+
+.weights {
+  height: calc(100% - 4em);
+  overflow-y: scroll;
+}

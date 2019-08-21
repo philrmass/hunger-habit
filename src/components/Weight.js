@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Weights from './Weights';
+import styles from '../styles/Weight.module.css';
 
 
 function Weight({ weights, saveWeight, deleteWeight }) {
@@ -24,11 +25,11 @@ function Weight({ weights, saveWeight, deleteWeight }) {
 
   return (
     <section className='weight'>
-      <div className='weightInput'>
-        <div className='label'>
+      <div className={styles.inputBox}>
+        <div className={styles.label}>
           Add Current Weight
         </div>
-        <div className='input'>
+        <div className={styles.input}>
           <div>
             <input
               id='yo'
@@ -48,10 +49,12 @@ function Weight({ weights, saveWeight, deleteWeight }) {
           <div></div>
         </div>
       </div>
-      <Weights
-        weights={weights}
-        deleteWeight={deleteWeight}
-      />
+      <div className={styles.weights}>
+        <Weights
+          weights={weights}
+          deleteWeight={deleteWeight}
+        />
+      </div>
     </section>
   );
 }

@@ -73,17 +73,15 @@ function App() {
 
   return (
     <main className='page'>
-      <div className='top'>
-        <Weight
-          weights={weights}
-          saveWeight={saveWeight}
-          deleteWeight={deleteWeight}
-        />
-        <Averages
-          weights={weights}
-          years={years}
-        />
-      </div>
+      <Weight
+        weights={weights}
+         saveWeight={saveWeight}
+         deleteWeight={deleteWeight}
+       />
+      <Averages
+        weights={weights}
+        years={years}
+      />
       <Graph
         weights={weights}
       />
