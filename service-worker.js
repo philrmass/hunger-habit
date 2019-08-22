@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/hunger-habit/precache-manifest.1cf1c77eb4488a17f67fbf1785088f16.js"
+  "/hunger-habit/precache-manifest.f78db2fdeb8fed80274db1a13d837da1.js"
 );
 
 workbox.clientsClaim();
