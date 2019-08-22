@@ -1,39 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/Averages.module.css';
+import { groupByMonth, computeAverages, computeStdDevs } from '../utilities/average';
 
 
 function Averages({ weights, years }) {
+  const [averages, setAverages] = useState([]);
   const date = new Date();
+
+  useEffect(() => {
+    const months0 = groupByMonth(weights);
+    const months1 = computeAverages(months0);
+    const months2 = computeStdDevs(months1);
+    setAverages(months2);
+  }, [weights]);
 
   return (
     <section className='averagesSection'>
-      <div className={styles.title}>
-        Averages
+      <div className={styles.box}>
+        <div className={styles.values}>
+          <ul>
+            {averages.map((value) => (
+              <li key={`${value.year}_${value.month}`}>
+                <div>
+                  {(new Date(date.setMonth(value.month - 1))).toLocaleString('en', { month: 'long' })}
+                </div>
+                <div>
+                  {value.year}
+                </div>
+                <div>
+                  {value.average}
+                </div>
+                <div>
+                  {value.stdDev}
+                </div>
+                <div>
+                  {value.count}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <ul>
-        { years.map((year) => (
-          <li key={year}>
-            {year.year}
-            <ul>
-              { year.monthAves.slice(0).reverse().map((ave, index) =>
-                ((ave !== 0) &&
-                  <li key={`${year}-${index}`} className='average'>
-                    <div>
-                      {(new Date(date.setMonth(11 - index))).toLocaleString('en', { month: 'long' })}
-                    </div>
-                    <div>
-                      {ave.toFixed(1)}
-                    </div>
-                    <div>
-                      ({year.monthStdDevs[11 - index].toFixed(1)})
-                    </div>
-                  </li>
-                ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
     </section>
   );
 }
