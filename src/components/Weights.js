@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/Weights.module.css';
 
@@ -12,11 +12,11 @@ function Weights({ weights, deleteWeight }) {
     const time = date.toLocaleString('en-us', timeOptions);
 
     return (
-      <Fragment key={value.time}>
-        <div className='weight'>
+      <div key={value.time} className={styles.value}>
+        <div className={styles.weight}>
           {value.weight}
         </div>
-        <div className='time'>
+        <div className={styles.time}>
           <div>
             {day}
           </div>
@@ -25,20 +25,21 @@ function Weights({ weights, deleteWeight }) {
           </div>
         </div>
         <div>
-          <button onClick={() => deleteWeight(value.time)}>
+          <button
+            className={styles.deleteButton}
+            onClick={() => deleteWeight(value.time)}
+          >
             X
           </button>
         </div>
-      </Fragment>
+      </div>
     );
   }
 
   return (
     <section className='weightsSection'>
       <div className={styles.box}>
-        <div className={styles.values}>
-          { weights.slice(0).reverse().map((value) => buildWeight(value)) }
-        </div>
+        { weights.slice(0).reverse().map((value) => buildWeight(value)) }
       </div>
     </section>
   );

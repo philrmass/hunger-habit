@@ -1,11 +1,7 @@
-.main {
+.box {
+  height: 100%;
+  background: #e8e8ff;
   /*
   overflow-x: scroll;
-  overflow-y: hidden;
   */
-}
-
-.thing {
-  height: 100%;
-  background: #ffc08040;
 }

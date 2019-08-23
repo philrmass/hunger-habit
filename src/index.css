@@ -1,10 +1,12 @@
 :root {
+  --averages-bg: #ffffff;
+  --averages-color: #000000;
+  /*
   --weight-bg: #ffffff;
   --weight-color: #383838;
-  --averages-bg: #233445;
-  --averages-color: #d8d8d8;
   --graph-bg: #a060a0;
   --graph-color: #202080;
+  */
 }
 
 * {
@@ -41,65 +43,16 @@ button {
 
 .weightInputSection {
   height: 4rem;
-  background: var(--weight-bg);
-  color: var(--weight-color);
 }
 
 .weightsSection {
-  height: calc(50% - 4rem);
-  padding: 8px 0;
+  height: calc(45% - 4rem);
 }
 
 .averagesSection {
-  height: 15%;
-  background: #c8c8ff;
+  height: 20%;
 }
 
 .graphSection {
   height: 35%;
-  background: #f8f480;
-}
-
-/*
-.weightValues > * {
-  padding-bottom: 8px;
-}
-
-.weightValues .weight {
-  padding-left: 8px;
-  margin-right: 8px;
-  color: #0808c8;
-  font-size: 1.6em;
-}
-
-.weightValues .time {
-  color: #404040;
-}
-
-.weightValues button {
-  border: 1px solid #808080;
-  border-radius: 2px;
-  padding: 0 2px;
-  background: #d0d0d0;
-  color: #606060;
-  font-size: 0.8em;
-}
-
-.graph {
-  height: 35%;
-  background: var(--graph-bg);
-}
-
-.averages {
-  height: 15%;
-  padding: 8px;
-  background: var(--averages-bg);
-  color: var(--averages-color);
-  font-size: 0.9em;
-}
-
-*/
-.average {
-  display: flex;
-  justify-content: space-around;
 }

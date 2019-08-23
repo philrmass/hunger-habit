@@ -1,20 +1,21 @@
-.inputBox {
+.box {
   height: 4em;
-  padding: 4px;
-  background: #d8d8d8;
+  padding: 8px;
+  background: #201060;
 }
 
-.label {
+.title {
   font-weight: bold;
+  color: #d8d8d8;
 }
 
 .input {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 2fr 0.5fr;
   align-items: center;
 }
 
-.weights {
-  height: calc(100% - 4em);
-  overflow-y: scroll;
+.time {
+  color: #d0d0d0;
 }
+

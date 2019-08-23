@@ -6,7 +6,7 @@ import styles from '../styles/Graph.module.css';
 function Weights({ weights }) {
   return (
     <section className='graphSection'>
-      <div className={styles.thing}>
+      <div className={styles.box}>
       </div>
     </section>
   );

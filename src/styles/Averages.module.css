@@ -1,11 +1,26 @@
 .box {
   height: 100%;
+  background: var(--averages-bg);
+  color: var(--averages-color);
   overflow-y: scroll;
 }
 
-.values {
-  background: #c0f0d0;
+.month {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.date {
+  font-size: 1.1em;
+}
+
+.label {
+  color: #585858;
+  margin-right: 0.5em;
 }
 
 .value {
+  font-size: 1.1em;
 }

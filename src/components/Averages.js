@@ -4,43 +4,55 @@ import styles from '../styles/Averages.module.css';
 import { groupByMonth, computeAverages, computeStdDevs } from '../utilities/average';
 
 
-function Averages({ weights, years }) {
-  const [averages, setAverages] = useState([]);
+function Averages({ weights }) {
+  const [months, setMonths] = useState([]);
   const date = new Date();
 
   useEffect(() => {
     const months0 = groupByMonth(weights);
     const months1 = computeAverages(months0);
     const months2 = computeStdDevs(months1);
-    setAverages(months2);
+    setMonths(months2);
   }, [weights]);
 
   return (
     <section className='averagesSection'>
       <div className={styles.box}>
-        <div className={styles.values}>
-          <ul>
-            {averages.map((value) => (
-              <li key={`${value.year}_${value.month}`}>
-                <div>
-                  {(new Date(date.setMonth(value.month - 1))).toLocaleString('en', { month: 'long' })}
+        <ul>
+          {months.slice(0).reverse().map((value) => (
+            <li key={`${value.year}_${value.month}`}>
+              <div className={styles.month}>
+                <div className={styles.date}>
+                  {(new Date(date.setMonth(value.month - 1))).toLocaleString('en', { month: 'long' })} {value.year}
                 </div>
                 <div>
-                  {value.year}
+                  <span className={styles.label}>
+                    Average
+                  </span>
+                  <span className={styles.value}>
+                    {value.average.toFixed(1)}
+                  </span>
                 </div>
                 <div>
-                  {value.average}
+                  <span className={styles.label}>
+                    Measurements
+                  </span>
+                  <span className={styles.value}>
+                    {value.count}
+                  </span>
                 </div>
                 <div>
-                  {value.stdDev}
+                  <span className={styles.label}>
+                    Std Dev
+                  </span>
+                  <span className={styles.value}>
+                    {value.stdDev.toFixed(1)}
+                  </span>
                 </div>
-                <div>
-                  {value.count}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -48,7 +60,6 @@ function Averages({ weights, years }) {
 
 Averages.propTypes = {
   weights: PropTypes.arrayOf(PropTypes.object),
-  years: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Averages;

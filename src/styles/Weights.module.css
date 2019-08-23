@@ -1,18 +1,33 @@
 .box {
   height: 100%;
-  border: 1px solid #f08080;
   padding: 8px;
-  /*
-  background: #80ffdf;
-  */
+  border: 1px solid #404040;
+  background: #e0e0e0;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-.values {
+.value {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 2fr 0.5fr;
   align-items: center;
+  padding: 4px;
+  margin: 2px;
+  background: #ffffff;
   color: #202020;
-  background: #e0e0e0;
+}
+
+.weight {
+  color: #101010;
+  font-size: 1.4em;
+}
+
+.time {
+  color: #505050;
+}
+
+.deleteButton {
+  padding: 1px;
+  border: 1px solid green;
+  border-radius: 2px;
 }

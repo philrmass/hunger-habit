@@ -24,8 +24,8 @@ function WeightInput({ saveWeight }) {
 
   return (
     <section className='weightInputSection'>
-      <div className={styles.inputBox}>
-        <div className={styles.label}>
+      <div className={styles.box}>
+        <div className={styles.title}>
           Add Current Weight
         </div>
         <div className={styles.input}>
@@ -41,7 +41,7 @@ function WeightInput({ saveWeight }) {
               onKeyUp={handleKeyUp}
             />
           </div>
-          <div>
+          <div className={styles.time}>
             <div>{day}</div>
             <div>{time}</div>
           </div>
