@@ -22,7 +22,7 @@ export function groupByMonth(weights) {
 
 export function computeAverages(months) {
   return months.map((month) => {
-    const sum = month.weights.reduce((sum, weight) => sum + parseInt(weight.weight, 10), 0);
+    const sum = month.weights.reduce((sum, weight) => sum + parseFloat(weight.weight, 10), 0);
     const count = month.weights.length;
     const average = sum / count;
     return {
@@ -35,7 +35,7 @@ export function computeAverages(months) {
 
 export function computeStdDevs(months) {
   return months.map((month) => {
-    const diffs = month.weights.map((weight) => parseInt(weight.weight, 10) - month.average);
+    const diffs = month.weights.map((weight) => parseFloat(weight.weight, 10) - month.average);
     const diffsSum = diffs.reduce((sum, diff) => sum + (diff * diff), 0);
     const stdDev = Math.sqrt(diffsSum / month.count);
     return {

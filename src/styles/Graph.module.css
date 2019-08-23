@@ -1,7 +1,6 @@
 .box {
   height: 100%;
-  background: #e8e8ff;
-  /*
+  background: #f8f8fd;
+  text-align: right;
   overflow-x: scroll;
-  */
 }

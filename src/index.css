@@ -1,12 +1,8 @@
 :root {
+  --spacer-bg: #a8a88a;
+  --input-bg: #201060;
   --averages-bg: #ffffff;
   --averages-color: #000000;
-  /*
-  --weight-bg: #ffffff;
-  --weight-color: #383838;
-  --graph-bg: #a060a0;
-  --graph-color: #202080;
-  */
 }
 
 * {
@@ -39,6 +35,12 @@ button {
 
 .page {
   height: 100vh;
+}
+
+.spacer {
+  height: 2px;
+  background: var(--input-bg);
+  background: var(--spacer-bg);
 }
 
 .weightInputSection {

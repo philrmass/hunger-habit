@@ -29,9 +29,11 @@ function App() {
         weights={weights}
         deleteWeight={deleteWeight}
       />
+      <div className='spacer'></div>
       <Averages
         weights={weights}
       />
+      <div className='spacer'></div>
       <Graph
         weights={weights}
       />

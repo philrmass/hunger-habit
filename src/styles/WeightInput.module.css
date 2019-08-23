@@ -1,7 +1,7 @@
 .box {
   height: 4em;
   padding: 8px;
-  background: #201060;
+  background: var(--input-bg);
 }
 
 .title {
