@@ -141,7 +141,6 @@ function Weights({ weights }) {
 
   return (
     <section className='graphSection'>
-      <button onClick={scrollLeft}>scroll 1</button>
       <div id='graphBox' className={styles.box}>
         {graph}
       </div>
