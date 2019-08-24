@@ -131,11 +131,14 @@ function Weights({ weights }) {
     const limits = findLimits(weights);
     const ranges = findRanges(limits);
     setGraph(drawGraph(weights, ranges));
+
+    var graphBox = document.getElementById('graphBox');
+    graphBox.scrollLeft = -50;
   }, [weights]);
 
   return (
     <section className='graphSection'>
-      <div className={styles.box}>
+      <div id='graphBox' className={styles.box}>
         {graph}
       </div>
     </section>
