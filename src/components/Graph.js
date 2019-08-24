@@ -52,6 +52,33 @@ function Weights({ weights }) {
     return ranges.weightRange + ranges.weightMin - value;
   }
 
+  function drawTimeLines(ranges) {
+    return (
+      <line x1='0' y1='0' x2='30' y2='30' className={styles.minor}/>
+    );
+  }
+
+  function drawWeightLines(ranges) {
+    let value = Math.round(ranges.weightMin + ranges.weightRange);
+    let lines = [];
+    while (value >= ranges.weightMin) {
+      lines = [...lines, value];
+      value -= 1;
+    }
+    return lines.map((line) => {
+      let lineClass = 'normal';
+      if ((line % 10) === 0) {
+        lineClass = 'major';
+      } else if ((line % 5) === 0) {
+        lineClass = 'minor';
+      }
+      const y = weightToY(line, ranges);
+      return (
+        <line key={y} x1='0' y1={y} x2={ranges.timeRange} y2={y} className={styles[lineClass]}/>
+      );
+    });
+  }
+
   function getWeightsPath(weights, ranges) {
     return weights.reduce((path, value, index) => {
       const time = (value.time / timeScale) - ranges.timeMin;
@@ -63,18 +90,13 @@ function Weights({ weights }) {
     }, '');
   }
 
-  function drawLines(ranges) {
-    return (
-      <line x1='0' y1='0' x2='30' y2='30' className={styles.minor}/>
-    );
-  }
-
   function drawGraph(weights, ranges) {
     const weightsPath = getWeightsPath(weights, ranges);
     return (
       <svg height='100%' viewBox={`0 0 ${ranges.timeRange} ${ranges.weightRange}`}>
         <path d={weightsPath} className={styles.weights} />
-        {drawLines(ranges)}
+        {drawWeightLines(ranges)}
+        {drawTimeLines(ranges)}
       </svg>
     );
   }

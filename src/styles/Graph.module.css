@@ -11,15 +11,15 @@
   fill: transparent;
 }
 
-.minor {
+.normal {
   stroke: #808080;
   stroke-width: 0.025;
   fill: transparent;
 }
 
-.middle {
-  stroke: #4000c0;
-  stroke-width: 0.025;
+.minor {
+  stroke: #c000c0;
+  stroke-width: 0.03;
   fill: transparent;
 }
 
