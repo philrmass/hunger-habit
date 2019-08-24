@@ -4,6 +4,8 @@ import styles from '../styles/Graph.module.css';
 
 
 function Weights({ weights }) {
+  const oneDay = 1000 * 60 * 60 * 24;
+  const timeScale = 4 * oneDay;
   const [graph, setGraph] = useState(null);
 
   function findLimits(weights) {
@@ -29,7 +31,6 @@ function Weights({ weights }) {
     const weightMin = limits.weightMin - weightPadding;
     const weightMax = limits.weightMax + weightPadding;
     const weightRange = weightMax - weightMin;
-    const timeScale = 1000 * 60 * 60 * 24;
     const timeMin = limits.timeMin / timeScale;
     const timeMax = limits.timeMax / timeScale;
     const timeRange = timeMax - timeMin;
@@ -42,11 +43,10 @@ function Weights({ weights }) {
     };
   }
 
+  function getWeightsPath(weights) {
+  }
+
   function drawGraph(weights, ranges) {
-    const timeScale = 1000 * 60 * 60 * 24;
-    const wts = weights.slice(0, 3);
-    //console.log('W', wts);
-    //console.log('R', ranges);
     const path = weights.reduce((path, value, index) => {
       const time = (value.time / timeScale) - ranges.timeMin;
       const weight = ranges.weightRange - (parseFloat(value.weight, 10) - ranges.weightMin);
@@ -54,7 +54,7 @@ function Weights({ weights }) {
       path += `${time.toFixed(2)} ${weight.toFixed(2)}`;
       return path;
     }, '');
-    //console.log(`P<${path}>`);
+    const weightsPath = getWeightsPath(weights);
     return (
       <svg height='100%' viewBox={`0 0 ${ranges.timeRange} ${ranges.weightRange}`}>
         <path d={path} fill='transparent' stroke='red' strokeWidth='0.2'/>
