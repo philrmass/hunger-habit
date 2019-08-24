@@ -1,7 +1,13 @@
 .box {
-  height: 4em;
-  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 8px 16px;
   background: var(--accent-bg);
+}
+
+.content {
 }
 
 .title {
@@ -19,3 +25,11 @@
   color: var(--accent-text-light);
 }
 
+.exportButton {
+  padding: 4px;
+  border: 1px solid var(--button-border);
+  border-radius: var(--button-border-radius);
+  background: var(--button-bg);
+  color: var(--button-color);
+  font-size: var(--button-text-size);
+}

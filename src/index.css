@@ -6,6 +6,11 @@
   --accent-text-light: #b8b8b8;
   --averages-bg: #ffffff;
   --averages-color: #000000;
+  --button-bg: #c8c8d8;
+  --button-color: #303030;
+  --button-border: #a0a0a0;
+  --button-border-radius: 2px;
+  --button-text-size: 0.8em;
 }
 
 * {
@@ -46,11 +51,11 @@ button {
 }
 
 .weightInputSection {
-  height: 4rem;
+  height: 4.2rem;
 }
 
 .weightsSection {
-  height: calc(45% - 4rem);
+  height: calc(45% - 4.2rem);
 }
 
 .averagesSection {

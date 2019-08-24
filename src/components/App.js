@@ -20,10 +20,15 @@ function App() {
     setWeights(weights.filter((value) => value.time !== time));
   }
 
+  function exportWeights() {
+    console.log('Export', weights.length);
+  }
+
   return (
     <main className='page'>
       <WeightInput
         saveWeight={saveWeight}
+        exportWeights={exportWeights}
       />
       <Weights
         weights={weights}
