@@ -1,12 +1,12 @@
 .box {
   height: 4em;
   padding: 8px;
-  background: var(--input-bg);
+  background: var(--accent-bg);
 }
 
 .title {
   font-weight: bold;
-  color: #d8d8d8;
+  color: var(--accent-text);
 }
 
 .input {
@@ -16,6 +16,6 @@
 }
 
 .time {
-  color: #d0d0d0;
+  color: var(--accent-text-light);
 }
 

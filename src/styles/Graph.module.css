@@ -4,3 +4,27 @@
   text-align: right;
   overflow-x: scroll;
 }
+
+.weights {
+  stroke: #ff4000;
+  stroke-width: 0.05;
+  fill: transparent;
+}
+
+.minor {
+  stroke: #808080;
+  stroke-width: 0.025;
+  fill: transparent;
+}
+
+.middle {
+  stroke: #4000c0;
+  stroke-width: 0.025;
+  fill: transparent;
+}
+
+.major {
+  stroke: #0020ff;
+  stroke-width: 0.04;
+  fill: transparent;
+}

@@ -1,7 +1,7 @@
 .box {
   height: 100%;
-  background: var(--averages-bg);
-  color: var(--averages-color);
+  background: var(--accent-bg);
+  color: var(--accent-text);
   overflow-y: scroll;
 }
 
@@ -14,13 +14,15 @@
 
 .date {
   font-size: 1.1em;
+  font-weight: bold;
 }
 
 .label {
-  color: #585858;
+  color: var(--accent-text-light);
   margin-right: 0.5em;
 }
 
 .value {
   font-size: 1.1em;
+  color: var(--accent-text-bright);
 }

@@ -1,6 +1,9 @@
 :root {
   --spacer-bg: #a8a88a;
-  --input-bg: #201060;
+  --accent-bg: #201060;
+  --accent-text-bright: #ffffff;
+  --accent-text: #d8d8d8;
+  --accent-text-light: #b8b8b8;
   --averages-bg: #ffffff;
   --averages-color: #000000;
 }
@@ -39,7 +42,6 @@ button {
 
 .spacer {
   height: 2px;
-  background: var(--input-bg);
   background: var(--spacer-bg);
 }
 

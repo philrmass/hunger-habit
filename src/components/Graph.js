@@ -43,21 +43,38 @@ function Weights({ weights }) {
     };
   }
 
-  function getWeightsPath(weights) {
+  function timeToX(time, ranges) {
+    return (time / timeScale) - ranges.timeMin;
+  }
+
+  function weightToY(weight, ranges) {
+    const value = parseFloat(weight, 10);
+    return ranges.weightRange + ranges.weightMin - value;
+  }
+
+  function getWeightsPath(weights, ranges) {
+    return weights.reduce((path, value, index) => {
+      const time = (value.time / timeScale) - ranges.timeMin;
+      const x = timeToX(value.time, ranges);
+      const y = weightToY(value.weight, ranges);
+      path += (index === 0) ? 'M ' : 'L ';
+      path += `${x.toFixed(2)} ${y.toFixed(2)}`;
+      return path;
+    }, '');
+  }
+
+  function drawLines(ranges) {
+    return (
+      <line x1='0' y1='0' x2='30' y2='30' className={styles.minor}/>
+    );
   }
 
   function drawGraph(weights, ranges) {
-    const path = weights.reduce((path, value, index) => {
-      const time = (value.time / timeScale) - ranges.timeMin;
-      const weight = ranges.weightRange - (parseFloat(value.weight, 10) - ranges.weightMin);
-      path += (index === 0) ? 'M ' : 'L ';
-      path += `${time.toFixed(2)} ${weight.toFixed(2)}`;
-      return path;
-    }, '');
-    const weightsPath = getWeightsPath(weights);
+    const weightsPath = getWeightsPath(weights, ranges);
     return (
       <svg height='100%' viewBox={`0 0 ${ranges.timeRange} ${ranges.weightRange}`}>
-        <path d={path} fill='transparent' stroke='red' strokeWidth='0.2'/>
+        <path d={weightsPath} className={styles.weights} />
+        {drawLines(ranges)}
       </svg>
     );
   }
