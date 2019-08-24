@@ -61,8 +61,9 @@ function Weights({ weights }) {
     date.setMinutes(0);
     date.setSeconds(0);
     date.setMilliseconds(0);
-    let lineClass = 'normal';
+    let lines = [];
     while (date >= dateMin) {
+      let lineClass = 'normal';
       if (date.getDate() === 1) {
         if (date.getMonth() === 0) {
           lineClass = 'major';
@@ -71,11 +72,14 @@ function Weights({ weights }) {
         }
       }
       const x = timeToX(date.getTime(), ranges);
+      lines = [...lines, [x, lineClass]];
       date.setDate(date.getDate() - 1);
     }
-    return (
-      <line x1='10' y1='0' x2='10' y2={ranges.weightRange} className={styles.normal}/>
-    );
+    return lines.map((value) => {
+      return (
+        <line key={value[0]} x1={value[0]} y1='0' x2={value[0]} y2={ranges.weightRange} className={styles[value[1]]}/>
+      );
+    });
   }
 
   function drawWeightLines(ranges) {

@@ -27,6 +27,7 @@
 
 .deleteButton {
   padding: 1px;
-  border: 1px solid green;
+  border: 1px solid #808080;
   border-radius: 2px;
+  background: #d0d0d0;
 }
