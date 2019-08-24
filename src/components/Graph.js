@@ -53,8 +53,28 @@ function Weights({ weights }) {
   }
 
   function drawTimeLines(ranges) {
+    const timeMin = timeScale * ranges.timeMin;
+    const timeMax = timeScale * (ranges.timeMin + ranges.timeRange);
+    const dateMin = new Date(timeMin);
+    const date = new Date(timeMax);
+    date.setHours(0);
+    date.setMinutes(0);
+    date.setSeconds(0);
+    date.setMilliseconds(0);
+    let lineClass = 'normal';
+    while (date >= dateMin) {
+      if (date.getDate() === 1) {
+        if (date.getMonth() === 0) {
+          lineClass = 'major';
+        } else {
+          lineClass = 'minor';
+        }
+      }
+      const x = timeToX(date.getTime(), ranges);
+      date.setDate(date.getDate() - 1);
+    }
     return (
-      <line x1='0' y1='0' x2='30' y2='30' className={styles.minor}/>
+      <line x1='10' y1='0' x2='10' y2={ranges.weightRange} className={styles.normal}/>
     );
   }
 
@@ -81,7 +101,6 @@ function Weights({ weights }) {
 
   function getWeightsPath(weights, ranges) {
     return weights.reduce((path, value, index) => {
-      const time = (value.time / timeScale) - ranges.timeMin;
       const x = timeToX(value.time, ranges);
       const y = weightToY(value.weight, ranges);
       path += (index === 0) ? 'M ' : 'L ';
