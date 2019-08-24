@@ -13,7 +13,7 @@ function App() {
   function saveWeight(value) {
     setWeights([...weights, {
       time: Date.now(),
-      weight: value,
+      weight: parseFloat(value, 10),
     }]);
   }
 

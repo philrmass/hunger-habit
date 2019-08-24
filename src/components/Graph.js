@@ -136,7 +136,7 @@ function Weights({ weights }) {
     const limits = findLimits(weights);
     const ranges = findRanges(limits);
     setGraph(drawGraph(weights, ranges));
-    scrollLeft();
+    setTimeout(scrollLeft, 0);
   }, [weights]);
 
   return (
