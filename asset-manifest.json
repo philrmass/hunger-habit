@@ -1,13 +1,13 @@
 {
-  "main.css": "/hunger-habit/static/css/main.621017f2.chunk.css",
-  "main.js": "/hunger-habit/static/js/main.161460a5.chunk.js",
-  "main.js.map": "/hunger-habit/static/js/main.161460a5.chunk.js.map",
+  "main.css": "/hunger-habit/static/css/main.52dc3fc5.chunk.css",
+  "main.js": "/hunger-habit/static/js/main.f527be11.chunk.js",
+  "main.js.map": "/hunger-habit/static/js/main.f527be11.chunk.js.map",
   "runtime~main.js": "/hunger-habit/static/js/runtime~main.6a89f152.js",
   "runtime~main.js.map": "/hunger-habit/static/js/runtime~main.6a89f152.js.map",
   "static/js/2.770b1f6f.chunk.js": "/hunger-habit/static/js/2.770b1f6f.chunk.js",
   "static/js/2.770b1f6f.chunk.js.map": "/hunger-habit/static/js/2.770b1f6f.chunk.js.map",
   "index.html": "/hunger-habit/index.html",
-  "precache-manifest.f2c29b77989b8934e5db0153235820cc.js": "/hunger-habit/precache-manifest.f2c29b77989b8934e5db0153235820cc.js",
+  "precache-manifest.e735a1862edf4f10c5aa2d124b51e4e1.js": "/hunger-habit/precache-manifest.e735a1862edf4f10c5aa2d124b51e4e1.js",
   "service-worker.js": "/hunger-habit/service-worker.js",
-  "static/css/main.621017f2.chunk.css.map": "/hunger-habit/static/css/main.621017f2.chunk.css.map"
+  "static/css/main.52dc3fc5.chunk.css.map": "/hunger-habit/static/css/main.52dc3fc5.chunk.css.map"
 }
