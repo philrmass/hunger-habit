@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/hunger-habit/static/js/runtime~main.6a89f152.js"
   },
   {
-    "revision": "cc023d5e0fdedf6d23d0",
-    "url": "/hunger-habit/static/js/main.01ccaf0d.chunk.js"
+    "revision": "050db4fc25c6295d52ef",
+    "url": "/hunger-habit/static/js/main.9e59c726.chunk.js"
   },
   {
     "revision": "0e98c52620b4b747b833",
     "url": "/hunger-habit/static/js/2.770b1f6f.chunk.js"
   },
   {
-    "revision": "cc023d5e0fdedf6d23d0",
+    "revision": "050db4fc25c6295d52ef",
     "url": "/hunger-habit/static/css/main.52dc3fc5.chunk.css"
   },
   {
-    "revision": "c2568931ce4e113107e609c9532acbdb",
+    "revision": "98f85fad43bb3bbe9e215dc413fe41b2",
     "url": "/hunger-habit/index.html"
   }
 ];
