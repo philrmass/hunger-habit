@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocalStorage } from '../utilities/storage';
 import Averages from './Averages';
 import Graph from './Graph';
+import ExportModal from './ExportModal';
 import WeightInput from './WeightInput';
 import Weights from './Weights';
 
 
 function App() {
   const [weights, setWeights] = useLocalStorage('weights', []);
+  const [modalShown, setModalShown] = useState(false);
 
   function saveWeight(value) {
     setWeights([...weights, {
@@ -22,6 +24,11 @@ function App() {
 
   function exportWeights() {
     console.log('Export', weights.length);
+    setModalShown(true);
+  }
+
+  function closeModal() {
+    setModalShown(false);
   }
 
   return (
@@ -42,6 +49,12 @@ function App() {
       <Graph
         weights={weights}
       />
+      {modalShown && (
+        <ExportModal
+          weights={weights}
+          close={closeModal}
+        />
+      )}
     </main>
   );
 }
