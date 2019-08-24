@@ -1,7 +1,7 @@
 .box {
   height: 100%;
   background: #f8f8fd;
-  text-align: right;
+  text-align: left;
   overflow-x: scroll;
 }
 
@@ -25,6 +25,12 @@
 
 .major {
   stroke: #0020ff;
+  stroke-width: 0.04;
+  fill: transparent;
+}
+
+.year {
+  stroke: #ff0040;
   stroke-width: 0.04;
   fill: transparent;
 }

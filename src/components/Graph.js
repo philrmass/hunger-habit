@@ -66,10 +66,13 @@ function Weights({ weights }) {
       let lineClass = 'normal';
       if (date.getDate() === 1) {
         if (date.getMonth() === 0) {
-          lineClass = 'major';
+          lineClass = 'year';
         } else {
-          lineClass = 'minor';
+          lineClass = 'major';
         }
+      }
+      if (date.getDay() === 0) {
+        lineClass = 'minor';
       }
       const x = timeToX(date.getTime(), ranges);
       lines = [...lines, [x, lineClass]];
