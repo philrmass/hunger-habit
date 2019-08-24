@@ -1,5 +1,7 @@
-# Hunger Habit
+# Weight Tracker
 
 ## Description
 
-An application to help you to improve your eating habits. it gives you and continuously updating score as you report your eating habits
+An application to help you to track your weight. It automatically saves the time along with each measurement and displays monthly averages and a graph.
+
+You can see the deployed app [here](https://philrmass.github.io/hunger-habit/)
