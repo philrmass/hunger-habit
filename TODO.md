@@ -1,6 +1,7 @@
 ## Weight Tracker Tasks
-- Enable the service worker, get to install as an app
-- Restore the export modal, have save as file and email options
+- Add _YEAR_MO_DT to data file name
+- Get to install as an app
+- Restore the export modal, add save as file and email options
 - Improve the logo
 
 ## Code Snippets
