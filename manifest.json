@@ -1,7 +1,7 @@
 {
   "short_name": "Weight Tracker",
   "name": "Weight Tracker",
-  "start_url": "/weight-tracker/index.html",
+  "start_url": "/hunger-habit/index.html",
   "display": "standalone",
   "icons": [
     {
