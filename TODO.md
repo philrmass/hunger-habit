@@ -1,7 +1,7 @@
 ## Weight Tracker Tasks
 - Add _YEAR_MO_DT to data file name
-- Get to install as an app
-- Restore the export modal, add save as file and email options
+- Restore the export modal, add save as file, load file, and email data options
+- Get to install as an pwa app
 - Improve the logo
 
 ## Code Snippets
