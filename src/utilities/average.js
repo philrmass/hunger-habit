@@ -3,7 +3,7 @@ export function groupByMonth(weights) {
     const date = new Date(weight.time);
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
-    const monthLabel = `0${month}`.slice(0, 2);
+    const monthLabel = `0${month}`.slice(-2);
     const label = `${year}_${monthLabel}`;
 
     if (!byMonth[label]) {
