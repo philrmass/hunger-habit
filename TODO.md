@@ -1,8 +1,9 @@
 ## Weight Tracker Tasks
+- Add padding to the ends of the graph
+- Scroll to the right on layout change
 - Add _YEAR_MO_DT to data file name
+- Ensure it works offline, check PWA score
 - Restore the export modal, add save as file, load file, and email data options
-- Get to install as an pwa app
-- Improve the logo
 
 ## Code Snippets
 ```javascript
