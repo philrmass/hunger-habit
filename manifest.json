@@ -1,6 +1,6 @@
 {
-  "short_name": "Weight Tracker",
-  "name": "Weight Tracker",
+  "short_name": "Hunger Habit",
+  "name": "Hunger Habit",
   "start_url": "/hunger-habit/index.html",
   "display": "standalone",
   "icons": [
